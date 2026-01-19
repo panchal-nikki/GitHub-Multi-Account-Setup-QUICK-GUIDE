@@ -1,10 +1,6 @@
-Glad it helped bro 🙌
-Here’s a **short, clean, copy-paste–ready cheat sheet** you can save in Notes / Notion / README.
-This is **production-grade** and works every time on macOS.
+# 🧠 GitHub Multi-Account Setup (macOS) – COMPLETE CHEAT SHEET
 
 ---
-
-# 🧠 GitHub Multi-Account Setup (macOS) – QUICK GUIDE
 
 ## 🔑 1. Create SSH keys
 
@@ -65,7 +61,7 @@ chmod 600 ~/.ssh/config
 
 ---
 
-## 🔗 4. Add keys to GitHub
+## 🔗 4. Add SSH keys to GitHub
 
 ```bash
 cat ~/.ssh/id_ed25519_personal.pub
@@ -99,26 +95,69 @@ git clone git@github-office:org/repo.git
 
 ---
 
-## 🧑‍💻 7. Git identity per repo
+# 🚀 INITIAL COMMIT & PUSH (VERY IMPORTANT)
+
+## 🔹 One-time global config
 
 ```bash
-# Personal repo
-git config user.email "personal-email@gmail.com"
-
-# Office repo
-git config user.email "office-email@company.com"
+git config --global user.name "Nikki Panchal"
+git config --global user.useConfigOnly true
 ```
 
 ---
 
-## 🧩 8. VS Code CLI fix (once)
+## 🧑‍💻 PERSONAL REPO – First Push
+
+```bash
+git init
+git config user.email "personal-email@gmail.com"
+
+git add .
+git commit -m "initial commit"
+
+git branch -M main
+git remote add origin git@github-personal:your-username/repo-name.git
+git push -u origin main
+```
+
+✅ Commits will link to **personal GitHub profile**
+
+---
+
+## 🏢 OFFICE REPO – First Push
+
+```bash
+git init
+git config user.email "office-email@company.com"
+
+git add .
+git commit -m "initial commit"
+
+git branch -M main
+git remote add origin git@github-office:org-or-company/repo-name.git
+git push -u origin main
+```
+
+✅ Commits will link to **office GitHub profile**
+
+---
+
+## 🔁 Fix wrong author (if you already committed)
+
+```bash
+git commit --amend --reset-author --no-edit
+```
+
+---
+
+## 🧩 VS Code CLI fix (once)
 
 ```text
 VS Code → Cmd + Shift + P
 Shell Command: Install 'code' command in PATH
 ```
 
-Restart terminal →
+Restart terminal:
 
 ```bash
 code .
@@ -128,6 +167,16 @@ code .
 
 ## 🧠 Mental model (remember forever)
 
-* **SSH key file name** → identity
+* **SSH key filename** → identity
 * **SSH config Host** → routing
-* **Clone URL host** → decides which account is used
+* **Clone URL host** → account used
+* **Repo email** → commit ownership
+
+---
+
+## ✅ Golden Rules
+
+* Personal repo → `github-personal` + personal email
+* Office repo → `github-office` + office email
+* Never commit without setting email
+* Never clone using `github.com`
