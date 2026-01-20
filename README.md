@@ -1,4 +1,5 @@
-# 🧠 GitHub Multi-Account Setup (macOS) – COMPLETE CHEAT SHEET
+# 🧠 GitHub Multi-Account Setup Windows | MacOs | Linux
+– COMPLETE CHEAT SHEET
 
 ---
 
