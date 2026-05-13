@@ -382,7 +382,7 @@ You may need to start `ssh-agent` again and re-add keys.
 
 If you keep personal and office repos in separate folders, you can also use Git's `includeIf` feature to auto-apply different Git config files by directory.
 
-Example idea:
+Example configuration:
 
 ```ini
 [includeIf "gitdir:~/work/"]
