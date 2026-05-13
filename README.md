@@ -191,9 +191,6 @@ Why this helps:
 - Git will not silently guess an email for commits
 - you are forced to set the correct repo identity intentionally
 
-You can keep `user.name` global if the same name is correct for all accounts.  
-The examples in sections 8 and 9 still include `git config user.name` for completeness, but you can omit that line if your global name is already correct.
-
 ---
 
 ## 🧑‍💻 8. Personal repo - first commit and push
@@ -231,6 +228,8 @@ git push -u origin main
 ```
 
 ✅ Commits will link to your **office GitHub profile** if that email is verified in that account.
+
+Note: if your global `user.name` is already correct for all accounts, you can omit the repo-local `git config user.name` line from the two setup examples above. It is included for completeness.
 
 ---
 
