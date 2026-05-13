@@ -52,7 +52,7 @@ ssh-keygen -t ed25519 -C "office-email@company.com"
 ```
 
 > You can repeat the same pattern for a third or fourth account:
-> `id_ed25519_freelance`, `id_ed25519_client1`, etc.
+> `id_ed25519_freelance`, `id_ed25519_client_name`, etc.
 
 ---
 
@@ -71,7 +71,7 @@ ssh-add -l
 
 ### Windows PowerShell
 
-Start the OpenSSH Authentication Agent once:
+Make sure the OpenSSH Authentication Agent is enabled and running before adding keys:
 
 ```powershell
 Get-Service ssh-agent
@@ -82,7 +82,7 @@ ssh-add $HOME/.ssh/id_ed25519_office
 ssh-add -l
 ```
 
-If `ssh-add` says the agent is not running, start the `ssh-agent` service first.
+If `ssh-add` says the agent is not running, re-check that the `ssh-agent` service started successfully.
 
 ---
 
@@ -190,6 +190,9 @@ Why this helps:
 
 - Git will not silently guess an email for commits
 - you are forced to set the correct repo identity intentionally
+
+You can keep `user.name` global if the same name is correct for all accounts.  
+Setting `user.name` inside a repo is optional, but it can make each repo fully self-contained and easier to verify.
 
 ---
 
