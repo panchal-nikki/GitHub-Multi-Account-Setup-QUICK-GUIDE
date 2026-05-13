@@ -52,7 +52,7 @@ ssh-keygen -t ed25519 -C "office-email@company.com"
 ```
 
 > You can repeat the same pattern for a third or fourth account:
-> `id_ed25519_freelance`, `id_ed25519_contract_work`, etc.
+> `id_ed25519_freelance`, `id_ed25519_contract`, etc.
 
 ---
 
@@ -192,7 +192,7 @@ Why this helps:
 - you are forced to set the correct repo identity intentionally
 
 You can keep `user.name` global if the same name is correct for all accounts.  
-The repo examples below still include `git config user.name` for completeness, but you can omit that line if your global name is already correct.
+The examples in sections 8 and 9 still include `git config user.name` for completeness, but you can omit that line if your global name is already correct.
 
 ---
 
