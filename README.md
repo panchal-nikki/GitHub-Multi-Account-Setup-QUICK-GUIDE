@@ -229,7 +229,7 @@ git push -u origin main
 
 ✅ Commits will link to your **office GitHub profile** if that email is verified in that account.
 
-Note: if your global `user.name` is already correct for all accounts, you can omit the repo-local `git config user.name` line from the two setup examples above. It is included for completeness.
+Note: if your global `user.name` is already correct for all accounts, you can omit the repo-local `git config user.name` line from the previous two setup examples. It is included for completeness.
 
 ---
 
@@ -381,6 +381,18 @@ You may need to start `ssh-agent` again and re-add keys.
 ## 🚀 Optional advanced setup for experienced developers
 
 If you keep personal and office repos in separate folders, you can also use Git's `includeIf` feature to auto-apply different Git config files by directory.
+
+Example idea:
+
+```ini
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/personal/"]
+  path = ~/.gitconfig-personal
+```
+
+Then each included file can define a different `user.name` and `user.email`.
 
 That is optional.  
 For most users, the SSH alias + repo-local email method in this guide is the simplest and safest setup.
