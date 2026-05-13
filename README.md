@@ -229,7 +229,7 @@ git push -u origin main
 
 ✅ Commits will link to your **office GitHub profile** if that email is verified in that account.
 
-Note: if your global `user.name` is already correct for all accounts, you can omit the repo-local `git config user.name` line from the previous two setup examples. It is included for completeness.
+Note: if your global `user.name` is already correct for all accounts, you can omit the repo-local `git config user.name` line from sections 8 and 9. It is included for completeness.
 
 ---
 
@@ -393,6 +393,14 @@ Example idea:
 ```
 
 Then each included file can define a different `user.name` and `user.email`.
+
+Example `~/.gitconfig-work`:
+
+```ini
+[user]
+  name = Your Name
+  email = office-email@company.com
+```
 
 That is optional.  
 For most users, the SSH alias + repo-local email method in this guide is the simplest and safest setup.
